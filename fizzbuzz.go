@@ -54,18 +54,8 @@ func main() {
 	for i := 1; i < N; i++ {
 		fmt.Print(i, "\t")
 
-		var complete = true
 		for _, x := range (*fxref)[i] {
-			if (*cxref)[x] == "" {
-				complete = false
-				break
-			}
-		}
-
-		if complete {
-			for _, x := range (*fxref)[i] {
-				fmt.Print( (*cxref)[x] )
-			}
+			fmt.Print( (*cxref)[x] )
 		}
 
 		if (*cxref)[i] != "" {
